@@ -19,6 +19,27 @@
                 alert("access denied");
             }
         }
+
+        var usingImage = 1;
+        function newImage() {
+
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("imgClickAndChange").src = "Deer.jpg";
+                    usingImage = 1;
+                    break;
+                case 1:
+                    document.getElementById("imgClickAndChange").src = "Doxiepoo.jpg";
+                    usingImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("imgClickAndChange").src = "Opossum.jpg";
+                    usingImage = 0;
+                    break;
+                default:
+                    document.getElementById("imgClickAndChange").src = "Deer.jpg";
+            }
+        }
     </script>
 </head>
 <body>
@@ -33,6 +54,13 @@
     </form>
 
     <p id="result">Attempts display here </p>
+
+    <div class="container">
+        <b><i>
+                <h4> Animals Image</h4>
+        </b></i>
+        <img src="Deer.jpg" onClick="newImage()" id="imgClickAndChange" alt="Deer" width="200" height="200">
+    </div>
     
 </body>
 </html>
